@@ -17,7 +17,7 @@ int main(int argc, char **args)
 
     char *str = (char *)malloc(sizeof(char) * (string_length + 1));
     scanf("%s", str);
-
+    //vong chong
     char **tokens = strTokenize(str, delim);
     _printTokens(tokens);
     _printTokensUnique(tokens);
