@@ -113,27 +113,36 @@ void print(struct Marks std, int n)
 
 }
 
-
+int arithmetic(int a, int d, int n)
+{
+    if(n == 1) return a;
+    return d + arithmetic(a,d,n-1);
+}
 
 
 int main()
 {
-    int n; scanf("%d", &n);
-    struct Marks std[n];
 
-    for(int i = 0; i< n; i++)
-    {
-        scanf("%d" , &std[i].roll);
-        scanf("%s" , &std[i].name);
-        scanf("%d" , &std[i].age);
-    }
+
+    printf("%d", arithmetic(1,2,4));
+
+
+    // int n; scanf("%d", &n);
+    // struct Marks std[n];
+
+    // for(int i = 0; i< n; i++)
+    // {
+    //     scanf("%d" , &std[i].roll);
+    //     scanf("%s" , &std[i].name);
+    //     scanf("%d" , &std[i].age);
+    // }
 
     
 
-    for(int i = 0; i<n; i++)
-    {
-        printf("%d\n", perc(std[i]));
-    }
+    // for(int i = 0; i<n; i++)
+    // {
+    //     printf("%d\n", perc(std[i]));
+    // }
 
     // char str[5]="abcd";
 
