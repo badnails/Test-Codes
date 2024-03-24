@@ -119,12 +119,39 @@ int arithmetic(int a, int d, int n)
     return d + arithmetic(a,d,n-1);
 }
 
+int arithmeticSum(int a, int d, int n)
+{
+    if(n == 1) return a;
+    return a + (n-1)*d + arithmeticSum(a,d,n-1);
+}
+
+int geometric(int a, int r, int n)
+{
+    if(n == 1) return a;
+    return r * geometric(a,r,n-1);
+}
+
+int geometricSum(int a, int r, int n)
+{
+    if(n == 1)  return a;
+    return geometricSum(a,r,n-1)+r*geometric(a,r,n-1);
+
+}
+
+void inputTill0()
+{
+    int n; scanf("%d", &n);
+    printf("%d\n", n);
+    if(n == 0) return;
+    inputTill0();
+}
 
 int main()
 {
 
 
-    printf("%d", arithmetic(1,2,4));
+    inputTill0();
+    //printf("%d", geometricSum(50,2,13));
 
 
     // int n; scanf("%d", &n);

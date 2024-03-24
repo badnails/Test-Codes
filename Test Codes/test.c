@@ -490,8 +490,11 @@ int main()
         // int x[10];
         // x=selectionSort(a);
 
-        long ret = fib(6);
-        printf("\n%ld", ret);
+        // long ret = fib(6);
+        // printf("\n%ld", ret);
+        int n;
+        sscanf("123", "%d", &n);
+        printf("%d", n);
 
     return 0;
 }

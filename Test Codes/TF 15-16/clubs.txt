@@ -1,0 +1,6 @@
+Manchester 38 23 11 4 78 37
+Chelsea 38 21 9 8 69 33
+Manchester 38 17 7 14 59 44
+Arsenal 38 19 11 8 72 43
+Liverpool 38 16 14 8 55 46
+Tottenham 38 21 8 9 60 33
