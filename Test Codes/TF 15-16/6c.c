@@ -24,39 +24,35 @@ void loadFromFile(EPL* epl)
 {
     FILE *fp = fopen("clubs.txt", "r");
     int i = 0;
-    // while(fscanf(fp, "%s %d %d %d %d %d %d", &epl[i].team, &epl[i].played, &epl[i].won, &epl[i].draw, &epl[i].loss, &epl[i].gs, &epl[i].gc) == 7)
-    // {
-    //     i++;
-    // }
-    char temp[80];
-    while(fgets(temp, 80, fp) != NULL)
+    while(fscanf(fp, "%[^0-9] %d %d %d %d %d %d", &epl[i].team, &epl[i].played, &epl[i].won, &epl[i].draw, &epl[i].loss, &epl[i].gs, &epl[i].gc) == 7)
     {
-        
+        i++;
     }
+    
     fclose(fp);
 }
 
 int* printPosition(EPL* epl)
 {
-    int *points = (int*)calloc(6, sizeof(int));
-    int *pos = (int*)calloc(6, sizeof(int));
+    int *points = (int*)calloc(20, sizeof(int));
+    int *pos = (int*)calloc(20, sizeof(int));
 
-    for(int i = 0; i<6; i++)
+    for(int i = 0; i<20; i++)
     {
         points[i]+=3*epl[i].won;
         points[i]+=epl[i].draw;
     }
 
-    for(int i = 0; i<6; i++)
+    for(int i = 0; i<20; i++)
     {
-        for(int j = 0; j<6; j++)
+        for(int j = 0; j<20; j++)
         {
             if(points[j]>points[i])
                 pos[i]++;
         }
     }
 
-    for(int i = 0; i<6; i++)
+    for(int i = 0; i<20; i++)
     {
         printf("%s %d %d\n", epl[i].team, points[i], pos[i]+1);
     }
@@ -67,27 +63,27 @@ int* printPosition(EPL* epl)
 void storeToFile(EPL* epl, int *pos)
 {
     FILE *fp = fopen("positions.txt", "w");
-    int points[6]={0};
+    int points[20]={0};
 
-    for(int i = 0; i<6; i++)
+    for(int i = 0; i<20; i++)
     {
         points[i]+=3*epl[i].won;
         points[i]+=epl[i].draw;
     }
     int j;
-    for(int i = 1; i<=6; i++)
+    for(int i = 1; i<=20; i++)
     {
-        for(j = 0; j<=6; j++)
+        for(j = 0; j<=20; j++)
         {
             if(pos[j]+1==i) break;
         }
-        fprintf(fp,"%s %d %d\n", epl[j].team, points[j], pos[j]+1);
+        fprintf(fp,"%s %d %d", epl[j].team, points[j], pos[j]+1);
     }
 }
 
 int main()
 {
-    EPL epl[6];
+    EPL epl[20];
     loadFromFile(epl);
     int* pos = printPosition(epl);
     storeToFile(epl, pos);

@@ -445,14 +445,37 @@ int invertbits(int x, int i, int n)
     return x^mask;
 }
 
-int rcs(int x)
+int lcs(int x, int n)
 {
-    int lsb = x&1;
-    x>>=1;
-    lsb<<=31;
+    int leftbits = (x&(((1<<n)-1)<<(31-n+1)))>>(31-n+1);
+    x<<=n;
+    return x|leftbits;
 
-    return x&lsb;
 }
+
+int rcs(int x, int n)
+{
+    int rightbits = ((1<<n)-1)&x;
+    x&=(~((1<<n)<<(31-n+1)));
+    return x>>n|rightbits<<(31-n+1);
+}
+
+void printbits(int x)
+{
+    for(int i = 0; i<32; i++)
+    {
+        printf("%d", (x>>(31-i))&1);
+    }
+    printf("\n");
+
+}
+
+int recursiveDecimalToBinary(int n)
+{
+    if(n == 0) return 0;
+    return n%2 + 10*recursiveDecimalToBinary(n/2);
+}
+
 
 long fib(int n)
 {
@@ -492,9 +515,33 @@ int main()
 
         // long ret = fib(6);
         // printf("\n%ld", ret);
-        int n;
-        sscanf("123", "%d", &n);
-        printf("%d", n);
+        
+        int n, b, i = 0, count = 0;
+        printf("Input a number: ");
+        scanf("%d", &n);
+        printf("Base conversion: ");
+        scanf("%d", &b);
 
-    return 0;
+        double x = n;
+        char s[32];
+
+        while(x>=1)
+        {
+            x/=b;
+            count++;
+        }
+        while(count)
+        {
+            x*=b;
+            if((int)x>=10) s[i] = 'A' + (int)x%10;
+            else s[i] = '0' + (int)x;
+            x-=(int)x;
+            i++;
+            count--;
+        }
+        s[i] = '\0';
+        printf("%s", s);
+
+        return 0;
+        
 }

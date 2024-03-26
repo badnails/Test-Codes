@@ -1,1 +1,20 @@
-Ma
+Manchester City  78 1
+Manchester United  65 2
+Liverpool  62 3
+Chelsea  57 4
+Arsenal  52 5
+Tottenham Hotspur  51 6
+Leicester City  49 7
+West Ham United  47 8
+Everton  45 9
+Aston Villa  43 10
+Leeds United  41 11
+Wolverhampton Wanderers  39 12
+Crystal Palace  38 13
+Southampton  36 14
+Brighton & Hove Albion  34 15
+Newcastle United  33 16
+Burnley  30 17
+Fulham  29 18
+West Bromwich Albion  23 19
+Sheffield United  17 20

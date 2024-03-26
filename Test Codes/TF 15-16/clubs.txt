@@ -1,6 +1,20 @@
-Manchester 38 23 11 4 78 37
-Chelsea 38 21 9 8 69 33
-Manchester 38 17 7 14 59 44
-Arsenal 38 19 11 8 72 43
-Liverpool 38 16 14 8 55 46
-Tottenham 38 21 8 9 60 33
+Sheffield United 30 4 5 21 20 60
+Manchester United 30 20 5 5 60 30
+Manchester City 30 25 3 2 80 20
+Liverpool 30 18 8 4 70 35
+Chelsea 30 16 9 5 55 30
+Arsenal 30 14 10 6 50 40
+Tottenham Hotspur 30 15 6 9 45 35
+Leicester City 30 14 7 9 40 35
+West Ham United 30 13 8 9 45 40
+Everton 30 12 9 9 40 35
+West Bromwich Albion 30 5 8 17 25 55
+Aston Villa 30 12 7 11 35 35
+Leeds United 30 11 8 11 50 50
+Wolverhampton Wanderers 30 10 9 11 35 40
+Crystal Palace 30 10 8 12 30 40
+Southampton 30 10 6 14 40 50
+Brighton & Hove Albion 30 8 10 12 30 40
+Newcastle United 30 8 9 13 35 45
+Burnley 30 7 9 14 25 40
+Fulham 30 7 8 15 30 50
