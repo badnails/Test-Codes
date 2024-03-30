@@ -20,20 +20,11 @@ int main()
 
     if(flag == 0)
     {
-        if(n%2)
+        for(int i = n-2; i >= 0; i--)
         {
-            for(int i = n-2; i >= 0; i--)
-            {
-                s[2*n-2-i] = s[i];
-            }
+            s[2*n-2-i] = s[i];
         }
-        else
-        {
-            for(int i = n-1; i >= 0; i--)
-            {
-                s[2*n-2-i] = s[i];
-            }
-        }
+        
     }
 
     printf("\n%s", s);

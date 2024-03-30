@@ -146,11 +146,23 @@ void inputTill0()
     inputTill0();
 }
 
+int nPr(int n, int r)
+{
+    if(r == 1) return n;
+
+    return n*nPr(n-1,r-1);
+}
+
+int nCr(int n, int r)
+{
+    
+}
+
 int main()
 {
 
 
-    inputTill0();
+    printf("%d", nPr(5,4));
     //printf("%d", geometricSum(50,2,13));
 
 

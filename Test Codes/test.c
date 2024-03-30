@@ -356,6 +356,19 @@ void printArr(int* arr, int n)
 // #include<math.h>
 
 
+int recBinSearch(int* arr, int l, int r, int x)
+{
+    if(l>r) return 0;
+    int mid = (l+r)/2;
+    if(arr[mid] == x) return 1;
+    if(arr[mid]>x) return recBinSearch(arr, l, mid-1, x);
+    if(arr[mid]<x) return recBinSearch(arr, mid+1, r, x);
+}
+
+
+
+
+
 // int binarySearch(int a[], int l, int r, int x)
 // {
 //     while(l<=r)
@@ -516,31 +529,36 @@ int main()
         // long ret = fib(6);
         // printf("\n%ld", ret);
         
-        int n, b, i = 0, count = 0;
-        printf("Input a number: ");
-        scanf("%d", &n);
-        printf("Base conversion: ");
-        scanf("%d", &b);
+        // int n, b, i = 0, count = 0;
+        // printf("Input a number: ");
+        // scanf("%d", &n);
+        // printf("Base conversion: ");
+        // scanf("%d", &b);
 
-        double x = n;
-        char s[32];
+        // double x = n;
+        // char s[32];
 
-        while(x>=1)
-        {
-            x/=b;
-            count++;
-        }
-        while(count)
-        {
-            x*=b;
-            if((int)x>=10) s[i] = 'A' + (int)x%10;
-            else s[i] = '0' + (int)x;
-            x-=(int)x;
-            i++;
-            count--;
-        }
-        s[i] = '\0';
-        printf("%s", s);
+        // while(x>=1)
+        // {
+        //     x/=b;
+        //     count++;
+        // }
+        // while(count)
+        // {
+        //     x*=b;
+        //     if((int)x>=10) s[i] = 'A' + (int)x%10;
+        //     else s[i] = '0' + (int)x;
+        //     x-=(int)x;
+        //     i++;
+        //     count--;
+        // }
+        // s[i] = '\0';
+        // printf("%s", s);
+
+        int array[20] = {1,2,3,4,5,6,7,8,9,10,11,13,14,15,16,17,18,19,20,50};
+
+        printf("%d", recBinSearch(array, 0, 19, 49));
+
 
         return 0;
         

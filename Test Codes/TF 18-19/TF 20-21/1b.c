@@ -24,22 +24,27 @@ int getStdId(int m)
 
 int getStdCode(int n)
 {
-    int mask = ~(~0<<9);
-    int roll = n&mask;
-    int dept = (n>>9)&mask;
-    mask = ~(~0<<13);
-    int yr = (n>>18)&mask;
-    yr%=100;
-    return yr*100000+dept*1000+roll;
+    // int mask = ~(~0<<9);
+    // int roll = n&mask;
+    // int dept = (n>>9)&mask;
+    // mask = ~(~0<<13);
+    // int yr = (n>>18)&mask;
+    // yr%=100;
+    // return yr*100000+dept*1000+roll;
+    int stdID = 0;
+    stdID = n&((1<<9)-1);
+    stdID += ((n>>9)&((1<<9)-1))*1000;
+    stdID += (((n>>18)&((1<<13)-1))/100)*100000;
+    return stdID;
 }
 
 int main()
 {
     int n;
     //scanf("%d", &n);
-    int m = n;
-    printBin(5);printf("\n");
-    printBin(55);
-    //printf("\n%d", getStdCode(getStdId(m)));
-
+    int m = 2205026;
+    // printBin(5);printf("\n");
+    // printBin(55);
+    int x = getStdCode(getStdId(2205026));
+    printf("%d", x);
 }
